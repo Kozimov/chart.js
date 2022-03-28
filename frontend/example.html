@@ -105,9 +105,9 @@
     
     
     // Set data
-    var data = [{% for post in posts %}{
-      country: "{{ post.nomi }}",
-      value: {{ post.daromadi }}
+    var data = [{% for country in countries %}{
+      country: "{{ country.nomi }}",
+      value: {{ country.daromadi }}
     },{% endfor %}];
     
     xAxis.data.setAll(data);

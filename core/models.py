@@ -12,3 +12,15 @@ class Post(models.Model):
 
     def __str__(self):
         return self.nomi
+
+
+class Country(models.Model):
+    class Meta:
+        verbose_name = "Country"
+        verbose_name_plural = "Davlatlar"
+
+    nomi = models.CharField(max_length=50)
+    daromadi = models.IntegerField()
+
+    def __str__(self):
+        return self.nomi
