@@ -16,3 +16,10 @@ def example(request):
         "countries": countries
     }
     return render(request, 'example.html', context)
+
+def pieChart(request):
+    countries = Country.objects.all()
+    context = {
+        "countries": countries
+    }
+    return render(request, 'pieChart.html', context)
