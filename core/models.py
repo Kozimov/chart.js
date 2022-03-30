@@ -24,3 +24,18 @@ class Country(models.Model):
 
     def __str__(self):
         return self.nomi
+
+
+class BoxChart(models.Model):
+    class Meta:
+        verbose_name = "BoxChart"
+        verbose_name_plural = "Box Chartlar"
+
+    date = models.CharField(max_length=50)
+    opens = models.IntegerField()
+    high = models.IntegerField()
+    low = models.IntegerField()
+    close = models.IntegerField()
+
+    def __str__(self):
+        return self.date

@@ -1,7 +1,7 @@
 from multiprocessing import context
 from unicodedata import name
 from django.shortcuts import render
-from .models import Country, Post
+from .models import *
 
 def home(request):
     posts = Post.objects.all()
@@ -23,3 +23,17 @@ def pieChart(request):
         "countries": countries
     }
     return render(request, 'pieChart.html', context)
+
+def sortedChart(request):
+    countries = Country.objects.all()
+    context = {
+        "countries": countries
+    }
+    return render(request, 'sortedChart.html', context)
+
+def boxPlotChart(request):
+    boxCharts = BoxChart.objects.all()
+    context = {
+        "boxCharts": boxCharts
+    }
+    return render(request, 'boxPlotChart.html', context)
